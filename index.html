@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV Cloud Kitchen</title>
+    <style>
+        /* Reset & Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: url('https://source.unsplash.com/1600x900/?food,restaurant') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-left: 20px;
+        }
+        /* Hamburger Menu */
+        .menu-button {
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        /* Main Content */
+        .hero {
+            margin-top: 50px;
+            font-size: 24px;
+        }
+        .button {
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        /* About Us Section */
+        .about {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin-top: 30px;
+        }
+        /* Other Sections */
+        .section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>AV Cloud Kitchen</h1>
+        <button class="menu-button">☰</button>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#outlets">Our Outlets</a>
+        <a href="#contact">Contact</a>
+        <a href="#customer-care">Customer Care</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Delicious Food, Delivered to Your Doorstep</h2>
+        <a href="#menu" class="button">Order Now</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about">
+        <h2>Our Story</h2>
+        <p>AV Cloud Kitchen started with a vision to bring restaurant-quality meals to your home. What started as a passion project soon became a widely loved food brand, serving thousands across NCR.</p>
+    </section>
+
+    <!-- Outlets Section -->
+    <section id="outlets" class="section">
+        <h2>Our Outlets</h2>
+        <p>We have multiple outlets across NCR, providing delicious food with fast delivery.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: AVCloudKitchen@contactus.com</p>
+        <p>Phone: +91 9876543210</p>
+    </section>
+
+    <!-- Customer Care Section -->
+    <section id="customer-care" class="section">
+        <h2>Customer Care</h2>
+        <p>Have any issues? Reach out to our customer support team.</p>
+    </section>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        document.querySelector(".menu-button").addEventListener("click", function() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>
