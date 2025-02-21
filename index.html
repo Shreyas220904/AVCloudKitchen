@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV Cloud Kitchen</title>
+    <style>
+        /* Reset & Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: black; /* Ensures the background is visible */
+            color: white;
+            text-align: center;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .hamburger {
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .sidebar {
+            position: fixed;
+            right: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: #222;
+            padding-top: 60px;
+            transition: right 0.3s ease;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar a:hover {
+            background: #444;
+        }
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .image-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="brand">AV Cloud Kitchen</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- Sidebar Menu -->
+<div class="sidebar" id="sidebar">
+    <a href="#" onclick="showImage('menu')">Menu</a>
+    <a href="#" onclick="showImage('locations')">Our Outlets</a>
+    <a href="#" onclick="showImage('story')">Our Story</a>
+    <a href="#" onclick="showImage('contact')">Contact Us</a>
+    <a href="#" onclick="showImage('customer-care')">Customer Care</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+    <h2>Welcome to AV Cloud Kitchen</h2>
+    <p>Delicious food, delivered to your doorstep.</p>
+
+    <div id="image-display">
+        <div class="image-container" id="menu">
+            <h3>Our Menu</h3>
+            <img src="menu.jpg" alt="Menu">
+        </div>
+        <div class="image-container" id="locations">
+            <h3>Our Outlets</h3>
+            <img src="outlets.jpg" alt="Locations">
+        </div>
+        <div class="image-container" id="story">
+            <h3>Our Story</h3>
+            <img src="story.jpg" alt="Our Story">
+        </div>
+        <div class="image-container" id="contact">
+            <h3>Contact Us</h3>
+            <img src="contact.jpg" alt="Contact">
+        </div>
+        <div class="image-container" id="customer-care">
+            <h3>Customer Care</h3>
+            <img src="customer-care.jpg" alt="Customer Care">
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        let sidebar = document.getElementById("sidebar");
+        if (sidebar.style.right === "0px") {
+            sidebar.style.right = "-250px";
+        } else {
+            sidebar.style.right = "0px";
+        }
+    }
+
+    function showImage(section) {
+        // Hide all images first
+        let images = document.querySelectorAll('.image-container');
+        images.forEach(img => img.style.display = 'none');
+
+        // Show the selected image
+        document.getElementById(section).style.display = 'block';
+
+        // Close the sidebar after clicking
+        toggleMenu();
+    }
+</script>
+
+</body>
+</html>
