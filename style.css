@@ -1,0 +1,83 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?food,restaurant') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* Hamburger Menu */
+#hamburger-menu {
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Navigation Links */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 20px;
+    color: white;
+}
+
+/* Menu Container */
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.menu-item {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+/* Search Bar */
+#search-bar {
+    margin-top: 10px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #hamburger-menu {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav.active {
+        display: flex;
+    }
+}
